@@ -14,14 +14,9 @@ TinyGPS gps;
 
 
 struct data {
-  int latitude;
-  int longitude;
-  char pneu1;
-  char pneu2;
-  char pneu3;
-  char pneu4;
-  char pneu5;
-  char pneu6;
+  long latitude;
+  long longitude;
+  char pneu;
 };
 
 void setup() {
@@ -39,25 +34,15 @@ void setup() {
 
 void loop() {
   // Get NMEA data
-  int latitude;
-  int longitude;
-  char pneu1;
-  char pneu2;
-  char pneu3;
-  char pneu4;
-  char pneu5;
-  char pneu6;
+  long latitude;
+  long longitude;
+  char pneu;
 
   latitude = 1;
   longitude = 2;
-  pneu1 = 65;
-  pneu2 = 66;
-  pneu3 = 67;
-  pneu4 = 67;
-  pneu5 = 70;
-  pneu6 = 69;
+  pneu = 65;
 
-  data datas = {latitude, longitude, pneu1, pneu2, pneu3, pneu4, pneu5, pneu6};
+  data datas = {latitude, longitude, pneu};
 
   // Send data to Sigfox network
   digitalWrite(13, HIGH);
