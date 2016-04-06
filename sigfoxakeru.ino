@@ -48,8 +48,8 @@ void loop() {
   char pneu5;
   char pneu6;
 
-  latitude = 255;
-  longitude = 8;
+  latitude = 1;
+  longitude = 2;
   pneu1 = 65;
   pneu2 = 66;
   pneu3 = 67;
