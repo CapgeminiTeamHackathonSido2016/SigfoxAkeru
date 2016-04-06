@@ -14,8 +14,8 @@ TinyGPS gps;
 
 
 struct data {
-  short latitude;
-  short longitude;
+  int latitude;
+  int longitude;
   char pneu1;
   char pneu2;
   char pneu3;
@@ -39,8 +39,8 @@ void setup() {
 
 void loop() {
   // Get NMEA data
-  short latitude;
-  short longitude;
+  int latitude;
+  int longitude;
   char pneu1;
   char pneu2;
   char pneu3;
@@ -48,14 +48,14 @@ void loop() {
   char pneu5;
   char pneu6;
 
-  latitude = 459;
-  longitude = 245;
-  pneu1 = 23;
-  pneu2 = 22;
-  pneu3 = 21;
-  pneu4 = 22;
-  pneu5 = 19;
-  pneu6 = 20;
+  latitude = 255;
+  longitude = 8;
+  pneu1 = 65;
+  pneu2 = 66;
+  pneu3 = 67;
+  pneu4 = 67;
+  pneu5 = 70;
+  pneu6 = 69;
 
   data datas = {latitude, longitude, pneu1, pneu2, pneu3, pneu4, pneu5, pneu6};
 
