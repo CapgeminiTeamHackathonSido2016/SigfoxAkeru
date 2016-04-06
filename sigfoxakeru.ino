@@ -41,14 +41,16 @@ void loop() {
     }
   }
 
-  // Some debug can't be harmful    
+  latitude = 1000.0;
+  longitude = 1000.0;
+  // Some debug can't be harmful
   Serial.println(latitude);
   Serial.println(longitude);
   Serial.println(fix_age);
   Serial.println(pression);
-  
+
   data my_data = {latitude, longitude, pression};
-  
+
   // Send data to Sigfox network
   digitalWrite(13, HIGH);
   akeru.send(&my_data, sizeof(data));
