@@ -1,3 +1,10 @@
+/*
+ * - GPS TX pin is plugged to Akeru pin 0
+ * - GPS VCC pin is plugged to Akeru pin 3V3
+ * - GPS GND pin is plugged to Akeru pin GND
+ */
+
+
 #include <SoftwareSerial.h>
 #include "TinyGPS.h"
 #include "Akeru.h"
@@ -7,9 +14,14 @@ TinyGPS gps;
 
 
 struct data {
-  float latitude;
-  float longitude;
-  float pression;
+  short latitude;
+  short longitude;
+  char pneu1;
+  char pneu2;
+  char pneu3;
+  char pneu4;
+  char pneu5;
+  char pneu6;
 };
 
 void setup() {
@@ -18,7 +30,7 @@ void setup() {
 
   // Initialize sigfox modem
   akeru.begin();
-  
+
   // Start serial communication, because everyone needs to !
   Serial.begin(115200);
 
@@ -27,34 +39,31 @@ void setup() {
 
 void loop() {
   // Get NMEA data
-  float latitude;
-  float longitude;
-  unsigned long fix_age = 9999;
-  float pression = 50;
+  short latitude;
+  short longitude;
+  char pneu1;
+  char pneu2;
+  char pneu3;
+  char pneu4;
+  char pneu5;
+  char pneu6;
 
-  while (fix_age > 1000) {
-    while (Serial.available()) {
-      if (gps.encode(Serial.read())) {
-        gps.f_get_position(&latitude, &longitude, &fix_age);
-      }
-      Serial.flush();
-    }
-  }
+  latitude = 459;
+  longitude = 245;
+  pneu1 = 23;
+  pneu2 = 22;
+  pneu3 = 21;
+  pneu4 = 22;
+  pneu5 = 19;
+  pneu6 = 20;
 
-  latitude = 1000.0;
-  longitude = 1000.0;
-  // Some debug can't be harmful
-  Serial.println(latitude);
-  Serial.println(longitude);
-  Serial.println(fix_age);
-  Serial.println(pression);
-
-  data my_data = {latitude, longitude, pression};
+  data datas = {latitude, longitude, pneu1, pneu2, pneu3, pneu4, pneu5, pneu6};
 
   // Send data to Sigfox network
   digitalWrite(13, HIGH);
-  akeru.send(&my_data, sizeof(data));
+  akeru.send(&datas, sizeof(data));
   digitalWrite(13, LOW);
 
   delay(1000);
+  exit(0);
 }
