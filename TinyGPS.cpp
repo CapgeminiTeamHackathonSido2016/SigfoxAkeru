@@ -396,17 +396,17 @@ long modify_latitude(int *i)
   {
     tab = (long *) malloc(sizeof(long) * 10);
   }
-  tab[0] = 43096001;
-  tab[1] = 43132002;
-  tab[2] = 43157003;
-  tab[3] = 43163004;
-  tab[4] = 43171005;
-  tab[5] = 43174006;
-  tab[6] = 43174007;
-  tab[7] = 43179008;
-  tab[8] = 43184009;
-  tab[9] = 43185010;
-  return (tab[*i % 10]);
+  tab[0] = 45610985;
+  tab[1] = 45610985;
+  tab[2] = 45623241;
+  tab[3] = 45642189;
+  tab[4] = 45662666;
+  tab[5] = 45672750;
+  tab[6] = 45682288;
+  tab[7] = 45695454;
+  tab[8] = 45705001;
+  tab[9] = 45717414;
+  return (tab[*i % 9 + 1]);
 }
 
 long modify_longitude(int *i)
@@ -416,17 +416,100 @@ long modify_longitude(int *i)
   {
     tab_longitude = (long *) malloc(sizeof(long) * 10);
   }
-  tab_longitude[0] = 553001;
-  tab_longitude[1] = 823002;
-  tab_longitude[2] = 2903003;
-  tab_longitude[3] = 2994004;
-  tab_longitude[4] = 2807005;
-  tab_longitude[5] = 2992006;
-  tab_longitude[6] = 2651007;
-  tab_longitude[7] = 2568008;
-  tab_longitude[8] = 3003009;
-  tab_longitude[9] = 980010;
-  return (tab_longitude[*i % 10]);
+  tab_longitude[0] = 1448802;
+  tab_longitude[1] = 1448802;
+  tab_longitude[2] = 1443797;
+  tab_longitude[3] = 1416883;
+  tab_longitude[4] = 1393666;
+  tab_longitude[5] = 1381110;
+  tab_longitude[6] = 1368108;
+  tab_longitude[7] = 1365113;
+  tab_longitude[8] = 1354446;
+  tab_longitude[9] = 1353805;
+  return (tab_longitude[*i % 9 + 1]);
+}
+
+char modify_pneu1(int i)
+{
+  char *tab_pneu;
+  if (i == 0)
+  {
+    tab_pneu = (char *) malloc(sizeof(char) * 10);
+  }
+  tab_pneu[0] = 90;
+  tab_pneu[1] = 90;
+  tab_pneu[2] = 89;
+  tab_pneu[3] = 89;
+  tab_pneu[4] = 89;
+  tab_pneu[5] = 88;
+  tab_pneu[6] = 87;
+  tab_pneu[7] = 87;
+  tab_pneu[8] = 86;
+  tab_pneu[9] = 85;
+  return (tab_pneu[i % 9 + 1]);
+}
+
+
+char modify_pneu2(int i)
+{
+  char *tab_pneu;
+  if (i == 0)
+  {
+    tab_pneu = (char *) malloc(sizeof(char) * 10);
+  }
+  tab_pneu[0] = 90;
+  tab_pneu[1] = 90;
+  tab_pneu[2] = 88;
+  tab_pneu[3] = 87;
+  tab_pneu[4] = 85;
+  tab_pneu[5] = 84;
+  tab_pneu[6] = 83;
+  tab_pneu[7] = 83;
+  tab_pneu[8] = 82;
+  tab_pneu[9] = 81;
+  return (tab_pneu[i % 9 + 1]);
+}
+
+
+char modify_pneu3(int i)
+{
+  char *tab_pneu;
+  if (i == 0)
+  {
+    tab_pneu = (char *) malloc(sizeof(char) * 10);
+  }
+  tab_pneu[0] = 90;
+  tab_pneu[1] = 90;
+  tab_pneu[2] = 88;
+  tab_pneu[3] = 87;
+  tab_pneu[4] = 85;
+  tab_pneu[5] = 84;
+  tab_pneu[6] = 82;
+  tab_pneu[7] = 80;
+  tab_pneu[8] = 79;
+  tab_pneu[9] = 78;
+  return (tab_pneu[i % 9 + 1]);
+}
+
+
+char modify_pneu4(int i)
+{
+  char *tab_pneu;
+  if (i == 0)
+  {
+    tab_pneu = (char *) malloc(sizeof(char) * 10);
+  }
+  tab_pneu[0] = 90;
+  tab_pneu[1] = 90;
+  tab_pneu[2] = 89;
+  tab_pneu[3] = 89;
+  tab_pneu[4] = 89;
+  tab_pneu[5] = 88;
+  tab_pneu[6] = 87;
+  tab_pneu[7] = 86;
+  tab_pneu[8] = 85;
+  tab_pneu[9] = 84;
+  return (tab_pneu[i % 9 + 1]);
 }
 
 long reverse_nibbles(long x)

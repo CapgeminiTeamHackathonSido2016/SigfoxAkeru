@@ -48,16 +48,16 @@ void loop() {
   
   latitude = reverse_nibbles(modify_latitude(&i));
   longitude = reverse_nibbles(modify_longitude(&i));
-  i++;
   //longitude = reverse_nibbles(12345678);
   /*pneu1 = 22;
   pneu2 = 25;
   pneu3 = 26;
   pneu4 = 28; */
-  pneu1 = 65;
-  pneu2 = 66;
-  pneu3 = 67;
-  pneu4 = 66;
+  pneu1 = modify_pneu1(i);
+  pneu2 = modify_pneu2(i);
+  pneu3 = modify_pneu3(i);
+  pneu4 = modify_pneu4(i);
+  i++;
   
   data datas = {latitude, longitude, pneu1, pneu2, pneu3, pneu4};
   
