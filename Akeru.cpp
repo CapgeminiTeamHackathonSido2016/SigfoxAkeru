@@ -14,7 +14,7 @@ Akeru_::Akeru_() :
     _lastSend = -1;
 }
 
-Akeru_::~Akeru_() {
+Akeru_::~Akeru_() {	
 }
 
 void Akeru_::begin() {
@@ -56,7 +56,7 @@ bool Akeru_::isReady() {
 	// You've been warned!
 
     unsigned long currentTime = millis();
-    if(currentTime >= _lastSend && (currentTime - _lastSend) <= 1000) {
+    if(currentTime >= _lastSend && (currentTime - _lastSend) <= 20000) {
         return false;
     }
 
