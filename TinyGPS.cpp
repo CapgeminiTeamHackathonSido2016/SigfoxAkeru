@@ -389,6 +389,46 @@ void TinyGPS::crack_datetime(int *year, byte *month, byte *day,
   if (hundredths) *hundredths = time % 100;
 }
 
+long modify_latitude(int *i)
+{
+  long *tab;
+  if (*i == 0)
+  {
+    tab = (long *) malloc(sizeof(long) * 10);
+  }
+  tab[0] = 43096001;
+  tab[1] = 43132002;
+  tab[2] = 43157003;
+  tab[3] = 43163004;
+  tab[4] = 43171005;
+  tab[5] = 43174006;
+  tab[6] = 43174007;
+  tab[7] = 43179008;
+  tab[8] = 43184009;
+  tab[9] = 43185010;
+  return (tab[*i % 10]);
+}
+
+long modify_longitude(int *i)
+{
+  long *tab_longitude;
+  if (*i == 0)
+  {
+    tab_longitude = (long *) malloc(sizeof(long) * 10);
+  }
+  tab_longitude[0] = 553001;
+  tab_longitude[1] = 823002;
+  tab_longitude[2] = 2903003;
+  tab_longitude[3] = 2994004;
+  tab_longitude[4] = 2807005;
+  tab_longitude[5] = 2992006;
+  tab_longitude[6] = 2651007;
+  tab_longitude[7] = 2568008;
+  tab_longitude[8] = 3003009;
+  tab_longitude[9] = 980010;
+  return (tab_longitude[*i % 10]);
+}
+
 long reverse_nibbles(long x)
 {
   long out = 0, i;

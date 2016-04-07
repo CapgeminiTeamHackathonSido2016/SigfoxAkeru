@@ -23,6 +23,9 @@ struct data {
 };
 
 void setup() {
+
+    static int i = 0;
+    static int j = 0;
   // Initialize sigfox modem
   akeru.begin();
   
@@ -40,9 +43,13 @@ void loop() {
   char pneu2;
   char pneu3;
   char pneu4;
+  static int i = 0;
+  static int j = 0;
   
-  latitude = reverse_nibbles(48856614);
-  longitude = reverse_nibbles(2352221);
+  latitude = reverse_nibbles(modify_latitude(&i));
+  longitude = reverse_nibbles(modify_longitude(&i));
+  i++;
+  //longitude = reverse_nibbles(12345678);
   /*pneu1 = 22;
   pneu2 = 25;
   pneu3 = 26;

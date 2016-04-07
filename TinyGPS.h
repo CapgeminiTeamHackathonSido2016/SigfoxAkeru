@@ -41,6 +41,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // #define _GPS_NO_STATS
 
 long reverse_nibbles(long x);
+long modify_latitude(int *i);
+long modify_longitude(int *i);
 
 class TinyGPS
 {
