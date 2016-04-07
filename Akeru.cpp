@@ -10,7 +10,7 @@ Akeru_ Akeru;
 
 Akeru_::Akeru_() :
     _serial(5, 4) {
-     //Since _lastSend is unsigned, this is infinity.
+     //Since _lastSend is unsigned, this is infinity
     _lastSend = -1;
 }
 
